@@ -8,7 +8,13 @@ export default () => {
     e.preventDefault();
     setNotes([{ body: input }, ...notes]);
   };
-
+  const display =()=>{
+    return notes.map((note,i)=>{
+      return <p key = {i}>
+        {note.body}
+      </p>
+    })
+  }
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -20,7 +26,8 @@ export default () => {
           }}
         />
         <input type='submit' value='Add' />
-      </form>
+      </form> 
+      {display()}
     </div>
   );
 };
