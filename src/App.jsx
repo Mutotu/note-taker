@@ -6,15 +6,24 @@ export default () => {
   const [notes, setNotes] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNotes([{ body: input }, ...notes]);
+    if (!checkInput(input)) {
+      setInput("");
+      e.target[0].placeholder = "Add note";
+      return setNotes([{ body: input }, ...notes]);
+    } else {
+      e.target[0].placeholder = "Please add a note!";
+    }
   };
-  const display =()=>{
-    return notes.map((note,i)=>{
-      return <li key = {i} >
-        {note.body}
-      </li>
-    })
-  }
+  const display = () => {
+    return notes.map((note, i) => {
+      return <li key={i}>{note.body}</li>;
+    });
+  };
+
+  const checkInput = (data) => {
+    if (!data) return true;
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -25,12 +34,9 @@ export default () => {
             setInput(e.target.value);
           }}
         />
-        <input type='submit' value='Add' id="submitButton" />
-      </form> 
-      <ul className= "container">
-       {display()} 
-      </ul>
-      
+        <input type='submit' value='Add' id='submitButton' />
+      </form>
+      <ul className='container'>{display()}</ul>
     </div>
   );
 };
