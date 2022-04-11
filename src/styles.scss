@@ -1,0 +1,37 @@
+body{
+    margin:5%;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+}
+
+#submitButton{
+    width: 100%;
+    height: 35px;
+    background-color: rgb(72, 187, 72);   
+
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    // background-color: lightgrey;
+    margin-top:15px;
+    padding-inline-start: 0px;
+}
+.container li:nth-child(even) {
+    background:rgb(184, 34, 34);
+  }
+  .container li:nth-child(odd) {
+    background:rgb(22, 50, 206);
+  }
+  li{
+      height:200px;
+      width: 600px;
+      border:2px solid black;
+      font-size: 25px;
+      overflow:scroll;
+  }

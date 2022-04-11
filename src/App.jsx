@@ -10,9 +10,9 @@ export default () => {
   };
   const display =()=>{
     return notes.map((note,i)=>{
-      return <p key = {i}>
+      return <li key = {i} >
         {note.body}
-      </p>
+      </li>
     })
   }
   return (
@@ -25,9 +25,12 @@ export default () => {
             setInput(e.target.value);
           }}
         />
-        <input type='submit' value='Add' />
+        <input type='submit' value='Add' id="submitButton" />
       </form> 
-      {display()}
+      <ul className= "container">
+       {display()} 
+      </ul>
+      
     </div>
   );
 };
