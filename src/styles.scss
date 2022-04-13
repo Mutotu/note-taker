@@ -1,41 +1,56 @@
 body {
-  margin: 5%;
-}
+    margin: 5%;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+  }
+  
+  #submitButton {
+    width: 100%;
+    height: 35px;
+    background-color:#04AA6D;
+    color:white;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+  }
 
-textarea {
-  width: 100%;
-  height: 100px;
-}
+  #submitButton:hover{
+    background-color:#028958;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    padding-inline-start: 0;
+  }
+  .container li:nth-child(even) {
+    background: #82837D;
+  }
+  .container li:nth-child(odd) {
+    background:#BABBB6;
+  }
+  li {
+    list-style-type: none;
+    height: auto;
+    max-width: 85%;
+    width: 960px;
+    border: 2px solid #fff;
+    font-size: 25px;
+  }
 
-#submitButton {
-  width: 100%;
-  height: 35px;
-  background-color: rgb(72, 187, 72);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  //   background-color: lightgrey;
-  margin-top: 15px;
-  padding-inline-start: 0px;
-}
-.container li:nth-child(even) {
-  background: rgb(184, 34, 34);
-}
-.container li:nth-child(odd) {
-  background: rgb(22, 50, 206);
-}
-li {
-  list-style-type: none;
-  height: auto;
-  width: 500px;
-  //   max-width: fit-content;
-
-  border: 2px solid black;
-  font-size: 25px;
-  //   overflow: scroll;
-}
+  .listStyle{
+    padding: 5px;
+    margin:5px;
+    color: white;
+    padding: 15px;
+    width: 85%;
+    height: 150px;
+    overflow: auto;
+    border: 1px solid #ccc;
+  }

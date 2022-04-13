@@ -16,7 +16,7 @@ export default () => {
   };
   const display = () => {
     return notes.map((note, i) => {
-      return <li key={i}>{note.body}</li>;
+      return <li key={i} className="listStyle">{note.body}</li>;
     });
   };
 
