@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 export default () => {
-  <div>Hello World!</div>;
   const [input, setInput] = useState("");
   const [notes, setNotes] = useState([]);
   const handleSubmit = (e) => {
@@ -14,11 +14,22 @@ export default () => {
       e.target[0].placeholder = "Please add a note!";
     }
   };
+
   const display = () => {
     return notes.map((note, i) => {
-      return <li key={i} className="listStyle">{note.body}</li>;
+      return <div key={note.body.id}>
+        <li className="listStyle">
+          {note.body} 
+        </li>
+        <button onClick={deleteToDo(note.body.id)}>Delete</button>
+      </div>
     });
   };
+
+
+  const deleteToDo = (id) => {
+    await axios.delete(`delete/${id}`);
+  }
 
   const checkInput = (data) => {
     if (!data) return true;
